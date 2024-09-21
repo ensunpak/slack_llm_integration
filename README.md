@@ -22,8 +22,8 @@ Actual accuracy: 94%<br>
 Manual Processing Time per Email: 7 minutes<br>
 Automated Processing Time per Email: 1 minute<br>
 Average Emails Processed Daily: 20<br>
-Manual Processing Time per Day: 140 minutes
-Automated Processing Time per Day: 20 minutes
+Manual Processing Time per Day: 140 minutes<br>
+Automated Processing Time per Day: 20 minutes<br>
 Time Savings: 86%
 
 ## Project Challenges & Learnings
