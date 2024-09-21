@@ -1,29 +1,33 @@
 # USING LLM FOR FEATURE EXTRACTION ON UNSTRUCTURED DATA THROUGH SLACK
 
 ## 1. Project Overview
-This is a simple project to use an LLM to parse unstructured data, in this case, email messages to extract key information from them. The LLM is pre-prompted and served to the Sales Development Representatives (SDR) through a Slack App to perform the feature extraction.
+This project focuses on building a robust solution to parse unstructured data—specifically, email messages—and efficiently return structured information to users. By leveraging a Large Language Model (LLM), the extraction of key information was automated and integrated into a Slack App, empowering Sales Development Representatives (SDRs) to streamline their workflow and reduce manual effort.
 
 ## 2. Use Case
-The client is a broker for retail cleaning jobs and they use an internally developed platform to manage their leads and sales. As they begin to scale their business, their SDR's time is increasingly being taken up to process and extract specific key information in new job bid emails that need to be entered into the internal platform. As email messages are unstructured data and come in different formats from different vendors, implementing a traditional rule-based approach to extract the desired information would require the rules to be constantly adjusted manually to achieve a satisfactory level of accuracy. Instead, the capabilities of a generative LLM to perform the extraction was used due to its ability to process unstructured data unsupervised and achieve excellent accuracy.
+The client, a broker specializing in retail cleaning services, operates an internal platform for managing leads and sales. As their business scaled, their SDRs were increasingly bogged down by the need to manually extract key details from bid emails—each arriving in a different, unstructured format. Implementing a rule-based extraction system would have required constant manual updates to maintain accuracy. Instead, a cutting-edge LLM approach that adapts to the varied email formats was adopted, autonomously processing the data with high precision. The result was a scalable, adaptable solution that eliminated the need for continuous manual intervention.
 
 ## Tech Used
-1. Ollama (Llama3 model) - LLM model to perform feature extraction
-2. LangChain - Chaining LLM conversation
-3. Slack Bolt SDK - Interfacing with Slack API
-5. Python - Scripting
+1. Ollama (Llama3 model) - LLM for feature extraction
+2. LangChain - Framework for chaining LLM conversation
+3. Slack Bolt SDK - Interfacing with the Slack API
+5. Python - Scripting and automation
 
 ## Implementation
-As the client has a small number of SDRs and to minimize the cost of this project from Cloud infrastructure costs, the project was implemented locally on a local machine remotely. First the Slack App will need to be created and configured in asynchronous SocketMode. The configuration of the Slack App used for this project is in the Slack App manifest in this repo.
+To keep infrastructure costs low for the client’s small team, the solution was deployed on a local machine rather than relying on cloud services. The Slack App was set up using asynchronous SocketMode, and the Llama3 model was deployed locally using Ollama.
 
-The Ollama application was installed on the machine serving the Python script and the Llama3 model image was pulled.
-
-The pre-prompt to the LLM was designed to get the LLM to extract the specific features required by the client in an email message. The Python scripts were developed to present the parsed information back to the user in Slack. During the user's session with the LLM, the user can fine-tune the LLM's response by prompting the LLM to update features that are captured wrongly. Slack Commands were also configured in this project that will allow the user to start a new session with the LLM, push the final response with the correct features extracted to a batch file, or check the messages queued in the batch file.
+The LLM was pre-prompted to extract the specific features needed from the client’s bid emails. Python scripts were written to deliver the extracted data directly through Slack. During interaction, users could refine the LLM’s output, correcting any inaccuracies in real time. Additionally, Slack Commands were incorporated to allow users to start new LLM sessions, push final data to a batch file, and review pending messages.
 
 ## Project outcomes
-Actual accuracy: 94%
-Manual email processing (end to end): About 7 minutes per email
-With automation (this project): About 1 minute per email
-Average daily volume of emails to process: 20
-Average time to process manually: 140 minutes per day
-Average time to process with automation: 20 minutes per day
-Time savings: 86%
+Actual accuracy: 94%<br>
+Manual Processing Time per Email: 7 minutes<br>
+Automated Processing Time per Email: 1 minute<br>
+Average Emails Processed Daily: 20<br>
+Manual Processing Time per Day: 140 minutes
+Automated Processing Time per Day: 20 minutes
+Time Savings: 86%
+
+## Project Challenges & Learnings
+One of the main challenges was designing an effective pre-prompt to guide the LLM toward consistent, accurate feature extraction. Through an iterative process, the pre-prompt was refined by combining few-shot learning and chain-of-thought prompting techniques. This approach significantly improved the model’s ability to deliver reliable results, even with varied email structures.
+
+## Project Expansion
+As the client continues to scale and increase their SDR team, transitioning this solution to the cloud will enable 24/7 availability and support a larger user base, ensuring seamless scalability and enhanced efficiency.
