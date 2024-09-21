@@ -39,9 +39,9 @@ async def push_to_queue(ack, say):
     in a queue is empty, it will create the file. Otherwise it will just
     append new completed parsed request entries to the queue file.
 
-    The queue file will be ingested by Keylink to create new tickets based
+    The queue file will be ingested by the platform to create new tickets based
     on the entries in the queue file. The ingestion logic, and subsequent
-    ticket creation logic will be taken care in Keylink.
+    ticket creation logic will be taken care in the platform.
 
     This function will display the contents of the request queue file at the
     end of this workflow.
