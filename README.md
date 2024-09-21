@@ -18,13 +18,12 @@ To keep infrastructure costs low for the client’s small team, the solution was
 The LLM was pre-prompted to extract the specific features needed from the client’s bid emails. Python scripts were written to deliver the extracted data directly through Slack. During interaction, users could refine the LLM’s output, correcting any inaccuracies in real time. Additionally, Slack Commands were incorporated to allow users to start new LLM sessions, push final data to a batch file, and review pending messages.
 
 ## Project outcomes
-Actual accuracy: 94%<br>
-Manual Processing Time per Email: 7 minutes<br>
-Automated Processing Time per Email: 1 minute<br>
-Average Emails Processed Daily: 20<br>
-Manual Processing Time per Day: 140 minutes<br>
-Automated Processing Time per Day: 20 minutes<br>
-Time Savings: 86%
+| **Metric**                          | **Before Automation** | **After Automation** | **Improvement** |
+|-------------------------------------|-----------------------|----------------------|-----------------|
+| Accuracy                            | N/A                   | 94%                  | N/A             |
+| Processing Time per Email           | 7 minutes             | 1 minute             | 6 minutes saved |
+| Average Daily Email Volume          | 20 emails             | 20 emails            | N/A             |
+| Total Processing Time per Day       | 140 minutes           | 20 minutes           | 86% time saved  |
 
 ## Project Challenges & Learnings
 One of the main challenges was designing an effective pre-prompt to guide the LLM toward consistent, accurate feature extraction. Through an iterative process, the pre-prompt was refined by combining few-shot learning and chain-of-thought prompting techniques. This approach significantly improved the model’s ability to deliver reliable results, even with varied email structures.
