@@ -1,0 +1,57 @@
+{
+    "display_information": {
+        "name": "slack_llm_app",
+        "description": "Request parser using LLM",
+        "background_color": "#323336"
+    },
+    "features": {
+        "bot_user": {
+            "display_name": "LLM Parser",
+            "always_online": true
+        },
+        "slash_commands": [
+            {
+                "command": "/new",
+                "description": "Starts a new session with the LLM",
+                "should_escape": false
+            },
+            {
+                "command": "/add-queue",
+                "description": "Add the current request to the request queue for project management system",
+                "should_escape": false
+            },
+            {
+                "command": "/queue",
+                "description": "See what is in the current request queue",
+                "should_escape": false
+            }
+        ]
+    },
+    "oauth_config": {
+        "scopes": {
+            "bot": [
+                "app_mentions:read",
+                "chat:write",
+                "commands",
+                "groups:history",
+                "im:history",
+                "im:read"
+            ]
+        }
+    },
+    "settings": {
+        "event_subscriptions": {
+            "bot_events": [
+                "app_mention",
+                "message.groups",
+                "message.im"
+            ]
+        },
+        "interactivity": {
+            "is_enabled": true
+        },
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": true,
+        "token_rotation_enabled": false
+    }
+}
