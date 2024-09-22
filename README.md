@@ -4,6 +4,12 @@
 2. slack_llm.py - Slack interactivity integration code in this file
 3. manifest.json - Slack App configuration parameters
 
+![](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
+![](https://img.shields.io/badge/Meta-0467DF?style=for-the-badge&logo=meta&logoColor=white)
+![](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
+![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+
 ## 1. Project Overview
 This project focuses on building a robust solution to parse unstructured data—specifically, email messages—and efficiently return structured information to users. By leveraging a Large Language Model (LLM), the extraction of key information was automated and integrated into a Slack App, empowering Sales Development Representatives (SDRs) to streamline their workflow and reduce manual effort.
 
