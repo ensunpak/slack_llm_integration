@@ -1,4 +1,8 @@
 # USING LLM FOR FEATURE EXTRACTION ON UNSTRUCTURED DATA THROUGH SLACK
+## 0. File Organization
+llm_prompt.py - LangChain setup and pre-prompt message for the LLM in this file
+slack_llm.py - Slack interactivity integration code in this file
+manifest.json - Slack App configuration parameters
 
 ## 1. Project Overview
 This project focuses on building a robust solution to parse unstructured data—specifically, email messages—and efficiently return structured information to users. By leveraging a Large Language Model (LLM), the extraction of key information was automated and integrated into a Slack App, empowering Sales Development Representatives (SDRs) to streamline their workflow and reduce manual effort.
